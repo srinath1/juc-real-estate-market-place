@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useSearch } from "../../context/search";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
-import { GOOGLE_PLACES_KEY } from "../../config";
+// import { GOOGLE_PLACES_KEY } from "../../config";
 import { sellPrices, rentPrices } from "../../helpers/pricelist";
 import { GrCheckboxSelected } from "react-icons/gr";
 import QueryString from "query-string";
@@ -48,7 +48,7 @@ const SearchForm = () => {
         <div className="row">
           <div className="col-lg-12 form-control">
             <GooglePlacesAutocomplete
-              apiKey={GOOGLE_PLACES_KEY}
+              apiKey={process.env.GOOGLE_PLACES_KEY}
               apiOptions="dk"
               selectProps={{
                 defaultInputValue: search?.address,
